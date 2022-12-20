@@ -46,7 +46,7 @@ $(NAME): $(OBJ)
 bonus: $(OBJ) ${OBJ_BONUS}
 	${AR} ${ARFLAGS} $(NAME) $(OBJ) ${OBJ_BONUS}
 
-%.o: %.c Makefile ${HEADER}
+%.o: %.c ${HEADER}
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 clean:
