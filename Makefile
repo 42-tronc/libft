@@ -16,28 +16,32 @@ CFLAGS := -Wall -Wextra -Werror
 ARFLAGS := -rcs
 RM := rm -rf
 
-# --- LIBFT---
-SRC_LIBFT :=	ft_atoi.c ft_isalpha.c ft_isprint.c ft_memcpy.c ft_strlcpy.c ft_strnstr.c ft_toupper.c ft_bzero.c ft_isascii.c ft_memchr.c ft_memmove.c \
+
+# ---- LIBFT----
+SRC_LIBFT := ft_atoi.c ft_isalpha.c ft_isprint.c ft_memcpy.c ft_strlcpy.c ft_strnstr.c ft_toupper.c ft_bzero.c ft_isascii.c ft_memchr.c ft_memmove.c \
 		ft_strchr.c ft_strlen.c ft_strrchr.c ft_isalnum.c ft_isdigit.c ft_memcmp.c ft_memset.c ft_strlcat.c ft_strncmp.c ft_tolower.c ft_strdup.c ft_calloc.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-SRC_LIBFT_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
+# - BONUS -
+SRC_LIBFT_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJ_LIBFT_BONUS = $(SRC_LIBFT_BONUS:.c=.o)
 
-# --- PRINTF ---
-DIR_PRINTF :=	printf/
-SRC_PRINTF :=	$(DIR_PRINTF)ft_printf.c $(DIR_PRINTF)print_nbr.c $(DIR_PRINTF)print_addr.c \
+# ---- PRINTF ----
+DIR_PRINTF := printf/
+SRC_PRINTF := $(DIR_PRINTF)ft_printf.c $(DIR_PRINTF)print_nbr.c $(DIR_PRINTF)print_addr.c \
 		$(DIR_PRINTF)print_stdout.c $(DIR_PRINTF)print_hex.c $(DIR_PRINTF)print_unsigned.c
-OBJ_PRINTF =	$(SRC_PRINTF:.c=.o)
+OBJ_PRINTF = $(SRC_PRINTF:.c=.o)
 
-# --- GET NEXT LINE ---
-DIR_GNL :=	get_next_line/
-SRC_GNL :=	$(DIR_GNL)get_next_line.c $(DIR_GNL)get_next_line_utils.c
-OBJ_GNL =	$(SRC_GNL:.c=.o)
+# ---- GET NEXT LINE ----
+DIR_GNL := get_next_line/
+SRC_GNL := $(DIR_GNL)get_next_line.c $(DIR_GNL)get_next_line_utils.c
+OBJ_GNL = $(SRC_GNL:.c=.o)
+# - BONUS -
 SRC_GNL_BONUS = $(DIR_GNL)get_next_line_utils_bonus.c $(DIR_GNL)get_next_line_bonus.c
 OBJ_GNL_BONUS = $(SRC_GNL_BONUS:.c=.o)
 
 
+# --------- RECIPES ---------
 all: $(NAME)
 
 $(NAME): $(OBJ)
