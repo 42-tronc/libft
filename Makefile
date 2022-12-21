@@ -16,29 +16,30 @@ CFLAGS := -Wall -Wextra -Werror
 ARFLAGS := -rcs
 RM := rm -rf
 
-#OBJ = $(OBJ_PRINTF)
+SRC = $(SRC_PRINTF)
+#SRC = $(SRC_LIBFT) $(SRC_PRINTF) $(SRC_GNL)
+
 OBJ_DIR = obj
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # ---- LIBFT----
 HEADER_LIBFT := libft.h
-#SRC_LIBFT := ft_atoi.c ft_isalpha.c ft_isprint.c ft_memcpy.c ft_strlcpy.c ft_strnstr.c ft_toupper.c ft_bzero.c ft_isascii.c ft_memchr.c ft_memmove.c \
-#		ft_strchr.c ft_strlen.c ft_strrchr.c ft_isalnum.c ft_isdigit.c ft_memcmp.c ft_memset.c ft_strlcat.c ft_strncmp.c ft_tolower.c ft_strdup.c ft_calloc.c \
-#		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SRC_LIBFT := ft_atoi.c ft_isalpha.c ft_isprint.c ft_memcpy.c ft_strlcpy.c ft_strnstr.c ft_toupper.c ft_bzero.c ft_isascii.c ft_memchr.c ft_memmove.c \
+		ft_strchr.c ft_strlen.c ft_strrchr.c ft_isalnum.c ft_isdigit.c ft_memcmp.c ft_memset.c ft_strlcat.c ft_strncmp.c ft_tolower.c ft_strdup.c ft_calloc.c \
+		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 #OBJ_LIBFT = $(SRC_LIBFT:.c=.o)
 ## - BONUS -
 #SRC_LIBFT_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 #OBJ_LIBFT_BONUS = $(SRC_LIBFT_BONUS:.c=.o)
 
 # ---- PRINTF ----
-#DIR_PRINTF := printf/
-#SRC_PRINTF := $(DIR_PRINTF)ft_printf.c $(DIR_PRINTF)print_nbr.c $(DIR_PRINTF)print_addr.c \
-#		$(DIR_PRINTF)print_stdout.c $(DIR_PRINTF)print_hex.c $(DIR_PRINTF)print_unsigned.c
-SRC = ft_printf.c print_nbr.c print_addr.c print_stdout.c print_hex.c print_unsigned.c
+DIR_PRINTF := printf/
+HEADER_PRINTF := ft_printf.h
+SRC_PRINTF = ft_printf.c print_nbr.c print_addr.c print_stdout.c print_hex.c print_unsigned.c
 #SRC_PRINTF := $(addprefix printf/, $(SRC_PRINTF_LIST))
 #OBJ_PRINTF = $(addprefix $(OBJ_DIR)/, $(SRC_PRINTF_LIST:.c=.o))
 
 
-OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # ---- GET NEXT LINE ----
 #DIR_GNL := get_next_line/
@@ -58,13 +59,9 @@ $(NAME): $(OBJ)
 #bonus: $(OBJ) ${OBJ_BONUS}
 #	${AR} ${ARFLAGS} $(NAME) $(OBJ) ${OBJ_BONUS}
 
-#obj/%.o: %.c ${HEADER}
-#$(OBJ_DIR)/%.o :  $(DIR_PRINTF)/ft_printf.c ${HEADER}
-$(OBJ_DIR)/%.o : printf/%.c
+#$(OBJ_DIR)/%.o : $(DIR_PRINTF)/%.c ${PRINTF_HEADER}
+$(OBJ_DIR)/%.o : $(DIR_PRINTF)/%.c
 	$(CC) $(CFLAGS) -o $@ -c $<
-
-#objects/%.o: printf/%.c ${HEADER}
-#	$(CC) $(CFLAGS) -o $@ -c $<
 
 makefolder :
 	mkdir -p $(OBJ_DIR)
