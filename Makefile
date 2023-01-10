@@ -73,10 +73,10 @@ makefolder :
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_DIR)
-	$(RM) $(test.out)
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) test.out
 
 re: fclean
 	make all
