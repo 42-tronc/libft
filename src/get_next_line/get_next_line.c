@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -112,17 +112,17 @@ static char	*clean_stash(char *stash)
  */
 char	*get_next_line(int fd)
 {
-	static char	*stash;
+	static char	*stash[OPEN_MAX];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) != 0)
-		return (free(stash), stash = NULL, NULL);
-	stash = check_buffer(fd, stash);
-	if (!stash)
+	if (fd < 0 || fd > OPEN_MAX || BUFFER_SIZE <= 0 || read(fd, 0, 0) != 0)
+		return (free(stash[fd]), stash[fd] = NULL, NULL);
+	stash[fd] = check_buffer(fd, stash[fd]);
+	if (!stash[fd])
 		return (NULL);
-	line = fill_line(stash);
+	line = fill_line(stash[fd]);
 	if (!line)
-		return (free(stash), stash = NULL, NULL);
-	stash = clean_stash(stash);
+		return (free(stash[fd]), stash[fd] = NULL, NULL);
+	stash[fd] = clean_stash(stash[fd]);
 	return (line);
 }
