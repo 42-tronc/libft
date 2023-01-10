@@ -6,13 +6,13 @@
 #    By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 13:33:54 by croy              #+#    #+#              #
-#    Updated: 2023/01/10 13:52:36 by croy             ###   ########lyon.fr    #
+#    Updated: 2023/01/10 15:19:31 by croy             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 # --------- GLOBAL VARIABLES ----------
 SHELL := bash
-#.SHELLFLAGS := -eu -o pipefail -c # strict bash mode
+.SHELLFLAGS := -eu -o pipefail -c # strict bash mode
 ## set -e = exit if any command has non zero exit status
 ## set -u = exit if undefined var used
 ## set -o pipefail = get error code of any pipe failing
