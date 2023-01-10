@@ -73,6 +73,7 @@ makefolder :
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_DIR)
+	$(RM) $(test.out)
 
 fclean: clean
 	$(RM) $(NAME)
@@ -80,4 +81,11 @@ fclean: clean
 re: fclean
 	make all
 
-.PHONY: all bonus clean fclean re
+debug : libft/libft.a
+	cc $(FSANITIZE) -Wall -Wextra -Werror $(SRC) -L ./libft -lft -o $(NAME)_debug  && ./$(NAME)_debug $(ARG) && echo "" && ./$(NAME)_debug $(ARG) | ./checker $(ARG)
+
+test: all
+	@${CC} -o test.out tests.c $(NAME)
+	@./test.out | cat -e
+
+.PHONY: all bonus makefolder clean fclean re debug test
