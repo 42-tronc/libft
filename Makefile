@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/01/10 13:33:54 by croy              #+#    #+#              #
+#    Updated: 2023/01/10 13:47:13 by croy             ###   ########lyon.fr    #
+#                                                                              #
+# **************************************************************************** #
+
 # --------- GLOBAL VARIABLES ----------
 SHELL := bash
 #.SHELLFLAGS := -eu -o pipefail -c # strict bash mode
@@ -9,11 +21,52 @@ SHELL := bash
 ## if a Make rule fails, it’s target file is deleted. This ensures the next time you run Make, it’ll properly re-run the failed rule, and guards against broken files.
 MAKEFLAGS += --warn-undefined-variables # warn about Make variables that don’t exist
 
-# Formatting see https://misc.flogisoft.com/bash/tip_colors_and_formatting
-GREEN		:= \033[32m
-RED			:= \033[1;31m
-LIGHT_GRAY	:= \033[37m
+# --------- FORMATTING ----------
+# see https://misc.flogisoft.com/bash/tip_colors_and_formatting
+FG_BLACK 			:= \033[30m
+FG_RED 				:= \033[31m
+FG_GREEN 			:= \033[32m
+FG_YELLOW 			:= \033[33m
+FG_BLUE 			:= \033[34m
+FG_MAGENTA 			:= \033[35m
+FG_CYAN 			:= \033[36m
+FG_LIGHT_GRAY 		:= \033[37m
+FG_DEFAULT 			:= \033[39m
+FG_DARK_GRAY 		:= \033[90m
+FG_LIGHT_RED 		:= \033[91m
+FG_LIGHT_GREEN 		:= \033[92m
+FG_LIGHT_YELLOW 	:= \033[93m
+FG_LIGHT_BLUE 		:= \033[94m
+FG_LIGHT_MAGENTA 	:= \033[95m
+FG_LIGHT_CYAN 		:= \033[96m
+FG_WHITE 			:= \033[97m
+
+BG_BLACK 			:= \033[40m
+BG_RED 				:= \033[41m
+BG_GREEN 			:= \033[42m
+BG_YELLOW 			:= \033[43m
+BG_BLUE 			:= \033[44m
+BG_MAGENTA 			:= \033[45m
+BG_CYAN 			:= \033[46m
+BG_LIGHT_GRAY 		:= \033[47m
+BG_DEFAULT 			:= \033[49m
+BG_DARK_GRAY 		:= \033[100m
+BG_LIGHT_RED 		:= \033[101m
+BG_LIGHT_GREEN 		:= \033[102m
+BG_LIGHT_YELLOW 	:= \033[103m
+BG_LIGHT_BLUE 		:= \033[104m
+BG_LIGHT_MAGENTA 	:= \033[105m
+BG_LIGHT_CYAN 		:= \033[106m
+BG_WHITE 			:= \033[107m
+
+BOLD		:= \033[1m
+DIM			:= \033[2m
+ITALIC		:= \033[3m
 UNDERLINE	:= \033[4m
+BLINK		:= \033[5m
+REVERSE		:= \033[7m
+HIDDEN		:= \033[8m
+STRIKED		:= \033[9m
 RESET		:= \033[0m
 
 
@@ -57,7 +110,7 @@ all: makefolder $(NAME)
 
 $(NAME): $(OBJ)
 	${AR} ${ARFLAGS} $(NAME) $(OBJ)
-	@echo -e "$(GREEN)Compiled: $(LIGHT_GRAY)$(UNDERLINE)$(NAME)$(RESET) was created"
+	@echo -e "$(BG_LIGHT_GREEN)Compiled:\t$(RESET) $(FG_WHITE)$(UNDERLINE)$(NAME)$(RESET) was created"
 
 #$(OBJ_DIR)%.o : $(DIRS)%.c
 #	$(CC) $(CFLAGS) -o $@ -c $<
@@ -77,21 +130,35 @@ makefolder :
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_DIR)
-	@echo -e "$(RED)Deleted: $(LIGHT_GRAY)objects$(RESET) were removed"
+	@echo -e "$(FG_RED)Deleted:\t $(FG_LIGHT_GRAY)objects$(RESET) were removed"
 
 fclean: clean
 	$(RM) $(NAME)
 	$(RM) test.out
-	@echo -e "$(RED)Deleted: $(LIGHT_GRAY)$(UNDERLINE)$(NAME)$(RESET) was removed"
+	@echo -e "$(FG_RED)Deleted:\t $(FG_LIGHT_GRAY)$(UNDERLINE)$(NAME)$(RESET) was removed"
 
 re: fclean
 	make all
 
 debug : libft/libft.a
-	cc $(FSANITIZE) -Wall -Wextra -Werror $(SRC) -L ./libft -lft -o $(NAME)_debug  && ./$(NAME)_debug $(ARG) && echo "" && ./$(NAME)_debug $(ARG) | ./checker $(ARG)
+	$(CC) $(CFLAGS) $(FSANITIZE) $(SRC) -L ./libft -lft -o $(NAME)_debug  && ./$(NAME)_debug $(ARG) && echo "" && ./$(NAME)_debug $(ARG) | ./checker $(ARG)
 
 test: all
-	@${CC} -o test.out tests.c $(NAME)
+	${CC} -o test.out tests.c $(NAME)
 	@./test.out | cat -e
 
+print:
+	@echo -e "$(RESET)regular$(RESET)"
+	@echo -e "$(BOLD)bold$(RESET)"
+	@echo -e "$(DIM)dim$(RESET)"
+	@echo -e "$(ITALIC)loli$(RESET)"
+	@echo -e "$(UNDERLINE)underline$(RESET)"
+	@echo -e "$(BLINK)blink$(RESET)"
+	@echo -e "$(REVERSE)reverse$(RESET)"
+	@echo -e "$(HIDDEN)hidden$(RESET)"
+	@echo -e "$(STRIKED)striked$(RESET)"
+	@echo -e "$(LOLI)loli$(RESET)"
+	@echo -e "$(RESET)reset$(RESET)"
+
 .PHONY: all bonus makefolder clean fclean re debug test
+.SILENT:
