@@ -26,34 +26,23 @@ OBJ_DIR = obj/
 OBJ = $(subst $(SRC_FOLDER),$(OBJ_DIR),$(SRC:.c=.o))
 #OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 
+
 # ---- LIBFT----
 DIR_LIBFT := $(SRC_FOLDER)libft/
-#DIR_LIBFT := $(SRC_FOLDER)libft/
-HEADER_LIBFT := libft.h
 SRC_LIBFT := ft_atoi.c ft_isalpha.c ft_isprint.c ft_memcpy.c ft_strlcpy.c ft_strnstr.c ft_toupper.c ft_bzero.c ft_isascii.c ft_memchr.c ft_memmove.c \
 		ft_strchr.c ft_strlen.c ft_strrchr.c ft_isalnum.c ft_isdigit.c ft_memcmp.c ft_memset.c ft_strlcat.c ft_strncmp.c ft_tolower.c ft_strdup.c ft_calloc.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-## - BONUS -
-#SRC_LIBFT_BONUS := ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 
 # ---- PRINTF ----
 DIR_PRINTF := $(SRC_FOLDER)printf/
-#DIR_PRINTF := $(SRC_FOLDER)printf/
-HEADER_PRINTF := ft_printf.h
 SRC_PRINTF := ft_printf.c print_nbr.c print_addr.c print_stdout.c print_hex.c print_unsigned.c
 
 
 # ---- GET NEXT LINE ----
 DIR_GNL := $(SRC_FOLDER)get_next_line/
-#DIR_GNL := $(SRC_FOLDER)get_next_line/
-#HEADER_GNL := get_next_line.h
-#SRC_GNL := get_next_line.c get_next_line_utils.c
-## - BONUS -
-HEADER_GNL := get_next_line_bonus.h
-SRC_GNL := get_next_line_utils_bonus.c get_next_line_bonus.c
-
+SRC_GNL := get_next_line_bonus.c get_next_line_utils_bonus.c
 
 
 # --------- RECIPES ---------
