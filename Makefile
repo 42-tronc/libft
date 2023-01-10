@@ -6,7 +6,7 @@
 #    By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 13:33:54 by croy              #+#    #+#              #
-#    Updated: 2023/01/10 15:19:31 by croy             ###   ########lyon.fr    #
+#    Updated: 2023/01/10 15:25:06 by croy             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,5 +160,5 @@ print:
 	@echo -e "$(LOLI)loli$(RESET)"
 	@echo -e "$(RESET)reset$(RESET)"
 
-.PHONY: all bonus makefolder clean fclean re debug test
+.PHONY: all makefolder clean fclean re debug test
 .SILENT:
