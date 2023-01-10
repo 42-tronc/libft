@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: croy <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 17:35:13 by croy              #+#    #+#             */
-/*   Updated: 2022/11/18 17:35:14 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../header/libft.h"
 
 /**
  * @brief Counts the number of nodes in the list

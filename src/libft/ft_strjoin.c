@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: croy <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:33:11 by croy              #+#    #+#             */
-/*   Updated: 2022/11/12 14:33:12 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../header/libft.h"
 
 /**
  * @brief copies a string into another starting from index
@@ -42,7 +42,7 @@ static int	str_cpy(char *dst, char *src, int index)
  * @return char* concatenated string of s1+s2 NULL if allocation fails
  */
 char	*ft_strjoin(char const *s1, char const *s2)
-{	
+{
 	size_t	index;
 	char	*dst;
 

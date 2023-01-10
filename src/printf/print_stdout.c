@@ -6,11 +6,11 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 10:55:25 by croy              #+#    #+#             */
-/*   Updated: 2022/11/29 13:53:13 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../header/libft.h"
 
 /**
  * @brief writes char 'c' to STDOUT

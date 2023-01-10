@@ -6,11 +6,11 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 14:58:56 by croy              #+#    #+#             */
-/*   Updated: 2022/12/20 10:27:06 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../header/libft.h"
 
 static char	*add_to_stash(char *stash, char *buffer)
 {

@@ -6,11 +6,11 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 13:48:22 by croy              #+#    #+#             */
-/*   Updated: 2022/12/05 10:46:51 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../../header/libft.h"
 
 size_t	print_hex(unsigned int nbr, char *base)
 {
