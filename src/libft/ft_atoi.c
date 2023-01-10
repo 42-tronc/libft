@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:59:16 by croy              #+#    #+#             */
-/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/10 10:32:59 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,4 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return ((int) result);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	const char str[] = "-000000000000000000000009223372858947475809";
-
-	printf("\nReal:\n\treturn\t= %d\n", atoi(str));
-	printf("\nMine:\n\treturn\t= %d", ft_atoi(str));
-
-	return (0);
 }
