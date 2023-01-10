@@ -9,6 +9,13 @@ SHELL := bash
 ## if a Make rule fails, it’s target file is deleted. This ensures the next time you run Make, it’ll properly re-run the failed rule, and guards against broken files.
 MAKEFLAGS += --warn-undefined-variables # warn about Make variables that don’t exist
 
+# Formatting see https://misc.flogisoft.com/bash/tip_colors_and_formatting
+GREEN		:= \033[32m
+RED			:= \033[1;31m
+LIGHT_GRAY	:= \033[37m
+UNDERLINE	:= \033[4m
+RESET		:= \033[0m
+
 
 # --------- PROJECT VARIABLES ---------
 NAME := libft.a
@@ -48,12 +55,9 @@ SRC_GNL := get_next_line.c get_next_line_utils.c
 # --------- RECIPES ---------
 all: makefolder $(NAME)
 
-#print : $(DIRS)*.c
-#	@echo "$<"
-#	@echo "loli $(DIRS)"
-
 $(NAME): $(OBJ)
 	${AR} ${ARFLAGS} $(NAME) $(OBJ)
+	@echo -e "$(GREEN)Compiled: $(LIGHT_GRAY)$(UNDERLINE)$(NAME)$(RESET) was created"
 
 #$(OBJ_DIR)%.o : $(DIRS)%.c
 #	$(CC) $(CFLAGS) -o $@ -c $<
@@ -73,10 +77,12 @@ makefolder :
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_DIR)
+	@echo -e "$(RED)Deleted: $(LIGHT_GRAY)objects$(RESET) were removed"
 
 fclean: clean
 	$(RM) $(NAME)
 	$(RM) test.out
+	@echo -e "$(RED)Deleted: $(LIGHT_GRAY)$(UNDERLINE)$(NAME)$(RESET) was removed"
 
 re: fclean
 	make all
