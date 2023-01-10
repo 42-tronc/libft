@@ -12,8 +12,9 @@ MAKEFLAGS += --warn-undefined-variables # warn about Make variables that don’t
 
 # --------- PROJECT VARIABLES ---------
 NAME := libft.a
-HEADER := libft.h
+HEADER := header/libft.h
 CFLAGS := -Wall -Wextra -Werror
+FSANITIZE = -fsanitize=address
 ARFLAGS := -rcs
 RM := rm -rf
 
@@ -22,9 +23,8 @@ SRC = $(addprefix $(SRC_FOLDER), $(SRC_LIBFT) $(SRC_PRINTF) $(SRC_GNL))
 
 #DIRS = $(addprefix $(SRC_FOLDER),$(DIR_LIBFT) $(DIR_PRINTF) $(DIR_GNL))
 
-OBJ_DIR = obj/
+OBJ_DIR := obj/
 OBJ = $(subst $(SRC_FOLDER),$(OBJ_DIR),$(SRC:.c=.o))
-#OBJ = $(addprefix $(OBJ_DIR),$(SRC:.c=.o))
 
 
 # ---- LIBFT----
@@ -42,7 +42,7 @@ SRC_PRINTF := ft_printf.c print_nbr.c print_addr.c print_stdout.c print_hex.c pr
 
 # ---- GET NEXT LINE ----
 DIR_GNL := $(SRC_FOLDER)get_next_line/
-SRC_GNL := get_next_line_bonus.c get_next_line_utils_bonus.c
+SRC_GNL := get_next_line.c get_next_line_utils.c
 
 
 # --------- RECIPES ---------
@@ -58,13 +58,13 @@ $(NAME): $(OBJ)
 #$(OBJ_DIR)%.o : $(DIRS)%.c
 #	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(OBJ_DIR)%.o : $(DIR_LIBFT)%.c
+$(OBJ_DIR)%.o : $(DIR_LIBFT)%.c $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(OBJ_DIR)%.o : $(DIR_PRINTF)%.c
+$(OBJ_DIR)%.o : $(DIR_PRINTF)%.c $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-$(OBJ_DIR)%.o : $(DIR_GNL)%.c
+$(OBJ_DIR)%.o : $(DIR_GNL)%.c $(HEADER)
 	$(CC) $(CFLAGS) -o $@ -c $<
 
 makefolder :
