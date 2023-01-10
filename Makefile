@@ -6,7 +6,7 @@
 #    By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 13:33:54 by croy              #+#    #+#              #
-#    Updated: 2023/01/10 13:47:13 by croy             ###   ########lyon.fr    #
+#    Updated: 2023/01/10 13:52:36 by croy             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,7 +110,7 @@ all: makefolder $(NAME)
 
 $(NAME): $(OBJ)
 	${AR} ${ARFLAGS} $(NAME) $(OBJ)
-	@echo -e "$(BG_LIGHT_GREEN)Compiled:\t$(RESET) $(FG_WHITE)$(UNDERLINE)$(NAME)$(RESET) was created"
+	@echo -e "$(BG_LIGHT_GREEN)Compiled:\t$(RESET) $(FG_WHITE)$(UNDERLINE)$(NAME)$(RESET) has been created"
 
 #$(OBJ_DIR)%.o : $(DIRS)%.c
 #	$(CC) $(CFLAGS) -o $@ -c $<
@@ -130,12 +130,12 @@ makefolder :
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_DIR)
-	@echo -e "$(FG_RED)Deleted:\t $(FG_LIGHT_GRAY)objects$(RESET) were removed"
+	@echo -e "$(FG_RED)Clean:\t\t $(FG_LIGHT_GRAY)object files$(RESET) have been deleted"
 
 fclean: clean
 	$(RM) $(NAME)
 	$(RM) test.out
-	@echo -e "$(FG_RED)Deleted:\t $(FG_LIGHT_GRAY)$(UNDERLINE)$(NAME)$(RESET) was removed"
+	@echo -e "$(FG_RED)FClean:\t\t $(FG_LIGHT_GRAY)$(UNDERLINE)$(NAME)$(RESET) has been deleted"
 
 re: fclean
 	make all
