@@ -6,7 +6,7 @@
 #    By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 13:33:54 by croy              #+#    #+#              #
-#    Updated: 2023/01/11 10:35:02 by croy             ###   ########lyon.fr    #
+#    Updated: 2023/01/11 10:36:14 by croy             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -140,6 +140,7 @@ fclean: clean
 re: fclean
 	make all
 
+# TODO fix this command
 debug : $(NAME)
 	$(CC) $(CFLAGS) $(FSANITIZE) $(SRC) -L ./libft -lft -o $(NAME)_debug  && ./$(NAME)_debug $(ARG) && echo "" && ./$(NAME)_debug $(ARG) | ./checker $(ARG)
 
