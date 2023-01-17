@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:55:43 by croy              #+#    #+#             */
-/*   Updated: 2023/01/10 08:57:59 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 11:40:41 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
+# endif
 
 typedef struct s_list
 {
