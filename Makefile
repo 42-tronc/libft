@@ -6,7 +6,7 @@
 #    By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/10 13:33:54 by croy              #+#    #+#              #
-#    Updated: 2023/01/11 10:36:14 by croy             ###   ########lyon.fr    #
+#    Updated: 2023/01/17 15:46:46 by croy             ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -130,7 +130,7 @@ makefolder :
 clean:
 	$(RM) $(OBJ)
 	$(RM) $(OBJ_DIR)
-	@echo -e "$(FG_RED)Clean:\t\t $(FG_LIGHT_GRAY)object files$(RESET) have been deleted"
+	@echo -e "$(FG_RED)Clean:\t\t $(FG_LIGHT_GRAY)$(ITALIC)$(NAME) object files$(RESET) have been deleted"
 
 fclean: clean
 	$(RM) $(NAME)
