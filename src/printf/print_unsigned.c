@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 10:59:20 by croy              #+#    #+#             */
-/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/17 11:53:00 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	print_unsigned(unsigned int nbr)
 	size_t			len;
 
 	len = 0;
-	if (nbr < 0)
+	if ((int)nbr < 0)
 		u_nbr = 4294967296 + nbr;
 	else
 		u_nbr = nbr;
