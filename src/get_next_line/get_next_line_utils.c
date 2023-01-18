@@ -6,27 +6,11 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:32:09 by croy              #+#    #+#             */
-/*   Updated: 2023/01/17 16:14:22 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/01/18 01:02:42 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/libft.h"
-
-char	*ft_strrchr(const char *s, int c)
-{
-	int	str_len;
-
-	str_len = ft_strlen(s);
-	while (str_len >= 0)
-	{
-		if (s[str_len] == (char)c)
-			return (&((char *)s)[str_len]);
-		str_len--;
-	}
-	if (!(char)c)
-		return (&((char *)s)[str_len]);
-	return (NULL);
-}
 
 char	*gnl_str_join(char *stash, char *buffer)
 {
