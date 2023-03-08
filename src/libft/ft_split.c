@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:18:44 by croy              #+#    #+#             */
-/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/03/08 12:57:55 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,8 @@ char	**ft_split(char const *s, char c)
 	size_t	lines;
 	char	**tab;
 
+	tab = NULL;
+	lines = 0;
 	if (!s)
 		return (NULL);
 	lines = count_lines(s, c);
