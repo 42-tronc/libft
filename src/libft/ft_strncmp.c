@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:58:40 by croy              #+#    #+#             */
-/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/04/03 23:19:59 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	while ((str1[i] || str2[i]) && i < n)
 	{
 		if (str1[i] != str2[i])
-		{
 			return (str1[i] - str2[i]);
-		}
 		i++;
 	}
 	return (0);
