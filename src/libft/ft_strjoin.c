@@ -25,7 +25,7 @@ static int	str_cpy(char *dst, char *src, int index)
 	size_t	i;
 
 	i = 0;
-	while (src[i])
+	while (src && src[i])
 	{
 		dst[index] = ((char *)src)[i];
 		i++;
