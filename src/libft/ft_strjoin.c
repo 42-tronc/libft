@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:33:11 by croy              #+#    #+#             */
-/*   Updated: 2023/09/21 12:25:30 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/09/21 12:46:42 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	index = ft_strcpy(dst, (char *)s1, 0);
 	index = ft_strcpy(dst, (char *)s2, index);
 	dst[index] = '\0';
+	free((char *)s1);
 	return (dst);
 }
