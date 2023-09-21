@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 13:18:44 by croy              #+#    #+#             */
-/*   Updated: 2023/03/08 12:57:55 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/09/21 15:20:35 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	lines = count_lines(s, c);
-	tab = malloc(sizeof(char *) * (lines + 1));
+	tab = ft_calloc(lines + 1, sizeof(char *));
 	if (!tab)
 		return (NULL);
 	set_string(tab, (char *)s, c);
