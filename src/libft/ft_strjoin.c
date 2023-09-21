@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 14:33:11 by croy              #+#    #+#             */
-/*   Updated: 2023/01/10 10:13:11 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/09/21 12:25:30 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
  * @param index index of dst to start the copy from
  * @return int index after the copy (effectively the size of dst)
  */
-static int	str_cpy(char *dst, char *src, int index)
+int	ft_strcpy(char *dst, char *src, int index)
 {
 	size_t	i;
 
@@ -51,8 +51,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	dst = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!dst)
 		return (NULL);
-	index = str_cpy(dst, (char *)s1, 0);
-	index = str_cpy(dst, (char *)s2, index);
+	index = ft_strcpy(dst, (char *)s1, 0);
+	index = ft_strcpy(dst, (char *)s2, index);
 	dst[index] = '\0';
 	return (dst);
 }
