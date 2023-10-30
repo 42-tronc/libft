@@ -6,7 +6,7 @@
 /*   By: croy <croy@student.42lyon.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 13:55:43 by croy              #+#    #+#             */
-/*   Updated: 2023/10/25 17:56:26 by croy             ###   ########lyon.fr   */
+/*   Updated: 2023/10/30 17:21:25 by croy             ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int		ft_strcpy(char *dst, char *src, int index);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strcat(char *dst, const char *src);
+size_t	ft_countchar(char *str, char c);
 
 int		ft_toupper(int c);
 int		ft_tolower(int c);
